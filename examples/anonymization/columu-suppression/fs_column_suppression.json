@@ -1,0 +1,13 @@
+{
+  "name": "test_data_source",
+  "data_connector": {
+    "name": "FileSystemConnector",
+    "base_directory": "data",
+    "regex_name": "*.csv"
+  },
+  "columns": [
+    "col1",
+    "col2"
+  ],
+  "engine": "local"
+}

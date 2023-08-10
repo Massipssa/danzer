@@ -10,6 +10,9 @@ logger = logging.getLogger(__name__)
 
 
 class ColumnSuppression(Anonymization):
+    """
+    Class that implement Suppression algorithm
+    """
     def __init__(self,
                  algorithm_name: str,
                  df: pd.DataFrame,
@@ -24,7 +27,7 @@ class ColumnSuppression(Anonymization):
         self.anonymized_columns = []
         self.unanonymized_columns = self.all_columns.copy()
 
-    def pseudo_anonymize(self, inplace: bool = True):
+    def anonymize(self, inplace: bool = True) -> pd.DataFrame:
         if all_columns_name_are_valid(self._df, self._columns_to_delete):
             # todo: review
             if self._columns_to_delete in self.anonymized_columns:

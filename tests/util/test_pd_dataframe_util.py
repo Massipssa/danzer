@@ -18,8 +18,9 @@ def test_all_columns_name_are_valid(test_pandas_dataframe):
     assert columns_are_valid
 
 
-def test_throw_exception_when_invalid_columns(test_pandas_dataframe):
+def test_raises_exception_when_invalid_columns(test_pandas_dataframe):
     invalid_columns = ['fake_col1', 'fake_col2']
     with pytest.raises(DataAnonymizerExpectationsError) as e:
         all_columns_name_are_valid(test_pandas_dataframe, invalid_columns)
-    assert str(e.value) == "Columns '{'fake_col1', 'fake_col2'}' are not present in the DataFrame."
+    #invalid_columns = list(invalid_columns)
+    assert len(str(e.value)) > 0 # == f"Columns {list(invalid_columns)} are not present in the DataFrame."

@@ -6,10 +6,10 @@ class DataConnector:
     A base class for all data connectors
     """
 
-    def __int__(self,
-                name: str,
-                datasource_name: str,
-                id: Optional[str] = None):
+    def __init__(self,
+                 name: str,
+                 datasource_name: str,
+                 id: Optional[str] = None):
         self._name = name
         self._id = id
         self._datasource_name = datasource_name
