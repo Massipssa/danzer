@@ -12,5 +12,9 @@ class Anonymization:
         self._algorithm_name = algorithm_name
         self._id = id
 
+    @property
+    def algorithm_name(self) -> str:
+        return self._algorithm_name
+
     def anonymize(self):
         raise NotImplementedError

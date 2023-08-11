@@ -32,6 +32,11 @@ class ColumnSuppression(Anonymization):
         self._unanonymized_columns = self.all_columns.copy()
         self._methods_applied = {}
         """
+
+    @property
+    def columns_to_delete(self) -> List[str]:
+        return self._columns_to_delete
+
     def anonymize(self, inplace: bool = True) -> pd.DataFrame:
         if all_columns_name_are_valid(self._df, self._columns_to_delete):
             # todo: review

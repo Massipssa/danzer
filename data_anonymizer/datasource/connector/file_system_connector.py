@@ -23,11 +23,19 @@ class FileSystemConnector(DataConnector):
             id=id,
             datasource_name=datasource_name,
         )
-        self.base_directory = base_directory
-        self.file_regex = file_regex
+        self._base_directory = base_directory
+        self._file_regex = file_regex
+
+    @property
+    def base_directory(self):
+        return self._base_directory
+
+    @property
+    def file_regex(self):
+        return self._file_regex
 
     def list_files_match_regex(self) -> Optional[List[str]]:
         """
         List all files that match regex from base directory
         """
-        return [f for f in os.listdir(self.base_directory) if fnmatch.fnmatch(f, self.file_regex)]
+        return [f for f in os.listdir(self._base_directory) if fnmatch.fnmatch(f, self._file_regex)]

@@ -1,6 +1,6 @@
 # Data Anonymizer
 
-*Don't let anyone knows about your data*
+*Don't let anyone knows about your data.*
 
 ## What's DanZer ?
 
