@@ -3,8 +3,9 @@ from typing import Optional, Dict
 
 class Anonymization:
     ALGORITHM_NAME_TO_ABBREVIATION_NAME_MAP: Dict[str, str] = {
-        "ColumnSuppression": "Drop",
-        "KAnonymity": "Kanonymity"
+        "ColumnSuppression": "suppression",
+        "NumericalPerturbation": "numerical_perturbation",
+        "KAnonymity": "k_anonymity"
     }
 
     def __init__(self, algorithm_name: str, id: Optional[str] = None):
