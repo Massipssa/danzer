@@ -1,7 +1,7 @@
 import pytest
 from pyspark.sql import SparkSession
 
-from danzer_anonymizer.danzer_anonymizer.dataset.util import get_or_create_spark_session
+from danzer_anonymizer.anonymizer.dataset.util import get_or_create_spark_session
 
 
 @pytest.mark.skip

@@ -1,4 +1,4 @@
-from danzer_anonymizer.danzer_anonymizer.config.data_connector_config import load_fs_data_connector_props
+from danzer_anonymizer.anonymizer.config.data_connector_config import load_fs_data_connector_props
 
 
 def test_load_fs_data_connector_props():

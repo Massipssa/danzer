@@ -1,6 +1,6 @@
 import pytest
 
-from danzer_anonymizer.danzer_anonymizer.datasource.connector.file_system_connector import FileSystemConnector
+from danzer_anonymizer.anonymizer.datasource.connector.file_system_connector import FileSystemConnector
 
 
 @pytest.fixture()

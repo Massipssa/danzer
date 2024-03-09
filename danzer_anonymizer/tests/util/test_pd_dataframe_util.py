@@ -2,8 +2,8 @@ import pandas as pd
 
 import pytest
 
-from danzer_anonymizer.danzer_anonymizer.exceptions import DataAnonymizerExpectationsError
-from danzer_anonymizer.danzer_anonymizer.util import all_columns_name_are_valid
+from danzer_anonymizer.anonymizer.exceptions.exceptions import DataAnonymizerError
+from danzer_anonymizer.anonymizer.core.util.pd_dataframe_util import all_columns_name_are_valid
 
 
 @pytest.fixture
@@ -20,7 +20,7 @@ def test_all_columns_name_are_valid(test_pandas_dataframe):
 
 def test_raises_exception_when_invalid_columns(test_pandas_dataframe):
     invalid_columns = ['fake_col1', 'fake_col2']
-    with pytest.raises(DataAnonymizerExpectationsError) as e:
+    with pytest.raises(DataAnonymizerError) as e:
         all_columns_name_are_valid(test_pandas_dataframe, invalid_columns)
-    #invalid_columns = list(invalid_columns)
-    assert len(str(e.value)) > 0 # == f"Columns {list(invalid_columns)} are not present in the DataFrame."
+    # invalid_columns = list(invalid_columns)
+    assert len(str(e.value)) > 0  # == f"Columns {list(invalid_columns)} are not present in the DataFrame."

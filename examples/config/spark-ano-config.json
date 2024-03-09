@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "operation": {
+    "name": "anonymization",
+    "algorithm_name": "hashing",
+    "columns": [
+      "col1", "col2", "col4"
+    ]
+  },
+  "data_source": {
+    "name": "my_s3_datasource",
+    "bucket": "",
+    "path": ""
+  },
+  "execution_engine": {
+    "name": "spark"
+  }
+}
