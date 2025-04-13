@@ -1,6 +1,6 @@
 site_name: Danzer
 site_url: https://your-site-url.com
-repo_url: https://github.com/your-org/danzer-anonymizer
+repo_url: https://github.com/Massipssa/danzer
 repo_name: GitHub
 
 theme:
@@ -39,8 +39,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          setup_commands:
-            - import sys; sys.path.append("src")
+          paths: ["src"]
   - autorefs
   - awesome-pages
 

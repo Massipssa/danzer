@@ -1,0 +1,16 @@
+{
+  "name": "test_data_source",
+  "action": "anonymization",
+  "algorithm_name": "numerical_perturbation",
+  "data_connector": {
+    "name": "FileSystemConnector",
+    "base_directory": "data",
+    "regex_name": "*.csv"
+  },
+  "standard_deviation": 100,
+  "columns": [
+    "name",
+    "landmark"
+  ],
+  "engine": "local"
+}
