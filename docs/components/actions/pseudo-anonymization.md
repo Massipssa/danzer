@@ -1,3 +1,5 @@
+## Pseudo-Anonymization
+
 - K-anonymization 
 - Encryption
   - AES cypher in CBC mode
@@ -7,4 +9,3 @@
   - md5
 - Masking 
 - Differential privacy
-

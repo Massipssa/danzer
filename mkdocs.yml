@@ -1,20 +1,6 @@
 site_name: Danzer
-site_url: https://your-site-url.com
 repo_url: https://github.com/Massipssa/danzer
 repo_name: GitHub
-
-theme:
-  name: material
-  language: en
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - content.code.copy
-    - content.action.edit
-    - toc.integrate
-  palette:
-    primary: blue
-    accent: light blue
 
 nav:
   - Home: index.md
@@ -22,8 +8,13 @@ nav:
       - Installation: getting-started/installation.md
       - Configuration: getting-started/configuration.md
   - Components:
-      - Engine: components/engine.md
-      - Actions: components/actions.md
+      - Home: components/index.md
+      - Engine:
+        - In-Memory: components/engines/in-memory-engine.md
+        - Spark: components/engines/spark-engine.md
+      - Actions:
+        - Pseudo-Anonymization: components/actions/pseudo-anonymization.md
+        - Anonymization: components/actions/anonymization.md
       - Algorithms: components/algorithms.md
   - API Reference:
       - Core Classes: api/core.md
@@ -34,23 +25,89 @@ nav:
   - FAQ: faq.md
   - Changelog: changelog.md
 
+
+#theme:
+#  name: material
+#  language: en
+#  features:
+#    - navigation.tabs
+#    - navigation.sections
+#    - content.code.copy
+#    - content.action.edit
+#    - toc.integrate
+#  palette:
+#    primary: blue
+#    accent: light blue
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+      scheme: default
+      primary: blue
+      accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  hide:
+    - toc
+#  logo: assets/ms_icon.png
+#  favicon: assets/ms_icon.png
+  features:
+    - navigation.instant
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.tabs.sticky
 plugins:
   - search
   - mkdocstrings:
       handlers:
         python:
-          paths: ["src"]
-  - autorefs
-  - awesome-pages
+          options:
+            docstring_style: sphinx
+            docstring_section_style: spacy
+            show_root_heading: true
+            show_submodules: false
+            show_bases: true
+            merge_init_into_class: false
+            group_by_category: false
+            inherited_members: true
+            members_order: source
+            show_signature: true
+            line_length: 80
+            separate_signature: true
+            show_signature_annotations: true
+            show_docstring_examples: true
+            summary:
+              attributes: false
+              functions: true
+              modules: false
+            filters:
+              - "!^_"
+  - mkdocs-jupyter:
+      ignore_h1_titles: True
+
+#extra:
+#  social:
+#    - icon: fontawesome/brands/github
+#      link: https://github.com/microsoft/presidio
+#    - icon: fontawesome/brands/docker
+#      link: https://hub.docker.com/_/microsoft-presidio
+#    - icon: fontawesome/solid/envelope
+#      link: mailto:presidio@microsoft.com
+#    - icon: fontawesome/solid/meteor
+#      link: https://huggingface.co/spaces/presidio/presidio_demo
 
 markdown_extensions:
-  - toc:
-      permalink: true
-  - codehilite
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.emoji
-  - pymdownx.highlight
-  - pymdownx.snippets
-  - pymdownx.details
+  - meta
   - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.pathconverter
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
