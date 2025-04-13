@@ -1,0 +1,57 @@
+site_name: Danzer
+site_url: https://your-site-url.com
+repo_url: https://github.com/your-org/danzer-anonymizer
+repo_name: GitHub
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.action.edit
+    - toc.integrate
+  palette:
+    primary: blue
+    accent: light blue
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Configuration: getting-started/configuration.md
+  - Components:
+      - Engine: components/engine.md
+      - Actions: components/actions.md
+      - Algorithms: components/algorithms.md
+  - API Reference:
+      - Core Classes: api/core.md
+      - Utilities: api/utils.md
+  - Usage Examples:
+      - Pandas Example: examples/pandas.md
+      - Spark Example: examples/spark.md
+  - FAQ: faq.md
+  - Changelog: changelog.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys; sys.path.append("src")
+  - autorefs
+  - awesome-pages
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.details
+  - admonition
