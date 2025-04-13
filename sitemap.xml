@@ -9,11 +9,19 @@
          <lastmod>2025-04-13</lastmod>
     </url>
     <url>
+         <loc>https://your-site-url.com/faq/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
          <loc>https://your-site-url.com/api/core/</loc>
          <lastmod>2025-04-13</lastmod>
     </url>
     <url>
          <loc>https://your-site-url.com/api/utils/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
+         <loc>https://your-site-url.com/components/</loc>
          <lastmod>2025-04-13</lastmod>
     </url>
     <url>
@@ -26,6 +34,22 @@
     </url>
     <url>
          <loc>https://your-site-url.com/components/engine/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
+         <loc>https://your-site-url.com/components/actions/anonymization/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
+         <loc>https://your-site-url.com/components/actions/pseudo-anonymization/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
+         <loc>https://your-site-url.com/components/engines/in-memory-engine/</loc>
+         <lastmod>2025-04-13</lastmod>
+    </url>
+    <url>
+         <loc>https://your-site-url.com/components/engines/spark-engine/</loc>
          <lastmod>2025-04-13</lastmod>
     </url>
     <url>
