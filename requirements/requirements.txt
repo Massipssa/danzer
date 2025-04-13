@@ -1,3 +1,5 @@
+pytest
+pyspark
 mkdocs
 mkdocs-material
 mkdocstrings[python]
