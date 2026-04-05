@@ -10,3 +10,8 @@ def spark_session():
         .getOrCreate()
     yield spark
     spark.stop()
+
+
+@pytest.fixture(scope="module")
+def spark(spark_session):
+    return spark_session

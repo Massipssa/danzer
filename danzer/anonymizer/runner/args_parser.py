@@ -1,18 +1,40 @@
 import argparse
+from argparse import Namespace
+
+VALID_ACTIONS = ["anonymize", "deanonymize"]
 
 
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--datasource", help="Json to datasource definition")
-    parser.add_argument("-a", "--action",
-                        choices=["anonymize", "deanonymize"],
-                        help="Action to perform: anonymization or pseudo-anonymizatoin",
-                        required=True
-                        )
-    parser.add_argument("-v", "--verbosity", help="Verbosity", action="store_false")
+def parse_args() -> Namespace:
+    parser = argparse.ArgumentParser(
+        description="Run anonymization or de-anonymization on a given data source definition."
+    )
+
+    parser.add_argument(
+        "-d",
+        "--datasource",
+        required=True,
+        help="Path to JSON or YAML file containing the data source definition."
+    )
+
+    parser.add_argument(
+        "-a",
+        "--action",
+        choices=VALID_ACTIONS,
+        help="Action to perform: 'anonymize' or 'deanonymize'.",
+        required=True
+    )
+    parser.add_argument(
+        "-v",
+        "--verbosity",
+        help="Enable verbose logging output.",
+        action="store_false",
+        required=False
+    )
+    return parser.parse_args()
 
 
-def get_action_type(action_name: str):
-    if action_name in ("anonymization", "p-anonymizatoin"):
+def get_action_type(action_name: str) -> str:
+    action_name = action_name.lower().strip()
+    if action_name in VALID_ACTIONS:
         return action_name
-    raise ValueError("Invalid argument is provided for action to perform")
+    raise ValueError(f"Invalid action '{action_name}'. Valid options are: {', '.join(VALID_ACTIONS)}")

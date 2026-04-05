@@ -1,6 +1,6 @@
 pandas
 pytest
-pyspark
+pyspark==3.4.1
 mkdocs
 mkdocs-material
 mkdocstrings[python]

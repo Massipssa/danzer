@@ -1,0 +1,6 @@
+{
+  "name": "FileSystemConnector",
+  "datasource_name": "test-datasource",
+  "base_directory": "../../../examples/data/",
+  "file_regex": "*.csv"
+}

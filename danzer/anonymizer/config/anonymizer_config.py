@@ -1,6 +1,6 @@
 from danzer.anonymizer.core.action import Action
-from danzer.anonymizer.core.engine.execution_engine import ExecutionEngine
-from danzer.anonymizer.datasource.datasource import Datasource
+from danzer.anonymizer.engine.execution_engine import ExecutionEngine
+from danzer.anonymizer.datasource.datasource import DataSource
 
 
 class AnonymizerConfig:
@@ -8,7 +8,7 @@ class AnonymizerConfig:
     def __init__(self,
                  name: str,
                  action: Action,
-                 data_source: Datasource,
+                 data_source: DataSource,
                  execution_engine: ExecutionEngine):
         self.name = name
         self.action = action

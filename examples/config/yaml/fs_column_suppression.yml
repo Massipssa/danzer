@@ -1,0 +1,15 @@
+name: test_data_source
+operation:
+  name: test_columns_suppression
+  algorithm_name: columns_suppression
+  columns_to_delete:
+    - name
+    - landmark
+data_source:
+  name: test-source-name
+  data_connector:
+    name: FileSystemConnector
+    base_directory: data
+    regex_name: "*.csv"
+execution_engine:
+  type: local
